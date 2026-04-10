@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resumen Pedido</title>
+</head>
+<body>
+<h1>Resumen Pedido</h1>
+<div>
+    <h2 class="display-2 fw-bold">Estado Actual</h2>
+    <p th:text="${pedido.estado}" ></p>
+</div>
+<div class="row">
+
+    <div class="col-md-3">
+        <h2 class="display-2 fw-bold">Codigo del pedido</h2>
+        <p th:text="${pedido.nroPedido}" ></p>
+    </div>
+    <div class="col-md-3">
+        <h2 class="display-2 fw-bold">Cliente</h2>
+        <p th:text="${pedido.nombreCliente}" ></p>
+    </div>
+    <div class="col-md-3">
+        <h2 class="display-2 fw-bold">Servicio</h2>
+        <p th:text="${pedido.tipoServicio}" ></p>
+    </div>
+    <div class="col-md-3">
+        <h2 class="display-2 fw-bold">Tiempo estimado</h2>
+        <p th:text="${pedido.tiempoEstimado}" ></p>
+    </div>
+
+
+</div>
+
+<h2>Platos seleccionados</h2>
+<a class="btn btn-primary mt-4 mb-4" th:href="@{'shipper/new'}">Nuevo Transportista</a>
+<table class="table table-sm">
+    <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Tiempo</th>
+
+    </tr>
+    <tr th:each="p, info : ${platos}">
+        <td th:text="${p.nombre}"></td>
+        <td th:text="${p.precio}"></td>
+        <td th:text="${p.tiempoPrep}"></td>
+    </tr>
+</table>
+</body>
+</html>

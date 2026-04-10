@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial Pedidos</title>
+</head>
+<body>
+<h2>Historial Pedidos</h2>
+<a class="btn btn-primary mt-4 mb-4" th:href="@{'/crear'}">Nuevo Pedido</a>
+<table class="table table-sm">
+    <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Servicio</th>
+        <th>Tiempo Estimado</th>
+        <th>Estado</th>
+        <th>Detalle</th>
+    </tr>
+    <tr th:each="p, info : ${pedidos}">
+        <td th:text="${info.index +1}"></td>
+        <td th:text="${p.nombreCliente}"></td>
+        <td th:text="${p.tipoServicio}"></td>
+        <td th:text="${p.tiempoEstimado}"></td>
+        <td th:text="${p.estado}"></td>
+        <td><a class="btn btn-primary" th:href="@{'/editar' + '?id' + ${shipper.shipper_id}}">Editar</a></td>
+        <td><a class="btn btn-primary" th:href="@{'/borrar' + '?id' + ${shipper.shipper_id}}">Borrar</a></td>
+    </tr>
+</table>
+</body>
+</html>
