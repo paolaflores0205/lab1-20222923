@@ -62,12 +62,11 @@ public class PedidoController {
     @GetMapping("/historialPedidos")
     public String historialPedidos(Model model, Pedido pedido){
         ArrayList<Pedido> pedidos = new ArrayList<>();
-
+        return "historialPedidos";
 
     }
     @GetMapping("/resumen")
     public String resumen(Model model, @RequestParam("codigo") int codigo){
-
         return "resumen";
 
     }

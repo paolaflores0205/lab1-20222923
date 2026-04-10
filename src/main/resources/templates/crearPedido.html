@@ -23,8 +23,8 @@
         <select id="servicio" name="servicio" class="form-select">
             <option value="" selected disabled>-- Elija un servicio --</option>
             <option th:each="dept, info : ${tipos}"
-                    th:value="${info.index+1}"
-                    th:text="${info.index+1}"></option>
+                    th:value="${dept}"
+                    th:text="${dept}"></option>
         </select>
         <!--        <input th:value="${employee.department.departmentname}" name="departmentname" type="text" class="form-control" id="departmentname" >-->
     </div>

@@ -22,8 +22,8 @@
         <td th:text="${p.tipoServicio}"></td>
         <td th:text="${p.tiempoEstimado}"></td>
         <td th:text="${p.estado}"></td>
-        <td><a class="btn btn-primary" th:href="@{'/editar' + '?id' + ${shipper.shipper_id}}">Editar</a></td>
-        <td><a class="btn btn-primary" th:href="@{'/borrar' + '?id' + ${shipper.shipper_id}}">Borrar</a></td>
+        <td><a class="btn btn-primary" th:href="@{'/editar' + '?codigo' + ${p.codigo}}">Ver resumen</a></td>
+
     </tr>
 </table>
 </body>
